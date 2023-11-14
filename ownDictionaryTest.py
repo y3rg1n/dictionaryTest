@@ -1,7 +1,9 @@
 userData = {}
 r = 0
 
+
 while (True):
+
     print()
     print("1. Add data")
     print("2. Search for data")
@@ -19,11 +21,11 @@ while (True):
         userData[r].update({"Record": r, "Name": n, "Age": a, "Height": h})
 
     elif (q == "2"):
-        k = input("Type what are you looking for?")
-        if k in userData:
-            print("YES!")
+        k = input("What are you looking for?")
+        if k in userData.items():
+            print(k, userData)
         else:
-            print("No data found.")
+            print("None")
 
     elif (q == "3"):
         print()

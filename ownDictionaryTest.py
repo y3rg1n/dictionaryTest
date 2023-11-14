@@ -1,22 +1,40 @@
-dictionary = {}
-q = input("Czy chcesz dodać nowe dane? (t/n):")
+userData = {}
 r = 0
-while q == "t":
-    r += 1
-    n = input("Podaj imię:")
-    a = input("Podaj wiek:")
-    h = input("Podaj wzrost:")
-    dictionary[r] = {}
-    dictionary[r].update({"Record": r, "Name": n, "Age": a, "Height": h})
-    for r, data in dictionary.items():
+
+while (True):
+    print()
+    print("1. Add data")
+    print("2. Search for data")
+    print("3. Delete data")
+    print("4. Show data")
+    print("5. End")
+    q = input("Please choose:")
+
+    if (q == "1"):
+        r += 1
+        n = input("Input name:")
+        a = input("Input age:")
+        h = input("Input height:")
+        userData[r] = {}
+        userData[r].update({"Record": r, "Name": n, "Age": a, "Height": h})
+
+    elif (q == "2"):
+        k = input("Type what are you looking for?")
+        if k in userData:
+            print("YES!")
+        else:
+            print("No data found.")
+
+    elif (q == "3"):
         print()
-        for value in data:
-            print(value, data[value])
-    print()
-    q = input("Czy chcesz dodać nowe dane?")
-print("Oto Twoje dane:")
-for r, data in dictionary.items():
-    print()
-    for value in data:
-        print(value, data[value])
-print()
+
+    elif (q == "4"):
+        for r, data in userData.items():
+            print()
+            for value in data:
+                print(value + ":", data[value])
+        print()
+
+    elif (q == "5"):
+        break
+
